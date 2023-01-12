@@ -1,0 +1,142 @@
+
+hp@DESKTOP-47BJPNN MINGW64 ~
+$ mkdir learn_git
+
+hp@DESKTOP-47BJPNN MINGW64 ~
+$ cd learn_git
+
+hp@DESKTOP-47BJPNN MINGW64 ~/learn_git
+$ ^[[200~touch third.txt
+bash: $'\E[200~touch': command not found
+
+hp@DESKTOP-47BJPNN MINGW64 ~/learn_git
+$ touch third.txt
+
+hp@DESKTOP-47BJPNN MINGW64 ~/learn_git
+$ git init
+Initialized empty Git repository in C:/Users/hp/learn_git/.git/
+
+hp@DESKTOP-47BJPNN MINGW64 ~/learn_git (master)
+$ git add third.txt
+
+hp@DESKTOP-47BJPNN MINGW64 ~/learn_git (master)
+$ git commit -m "adding third.txt"
+[master (root-commit) 12d0030] adding third.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 third.txt
+
+hp@DESKTOP-47BJPNN MINGW64 ~/learn_git (master)
+$ git log
+commit 12d0030e73da2f01f6fda38c7776865e934769f0 (HEAD -> master)
+Author: Aknioune <Fatimazaknioune@gmail.com>
+Date:   Tue Jan 10 15:34:41 2023 +0100
+
+    adding third.txt
+
+hp@DESKTOP-47BJPNN MINGW64 ~/learn_git (master)
+$ touch fourth.txt
+
+hp@DESKTOP-47BJPNN MINGW64 ~/learn_git (master)
+$ git add fourth.txt
+
+hp@DESKTOP-47BJPNN MINGW64 ~/learn_git (master)
+$ git commit -m "adding fourth.txt"
+[master d20c768] adding fourth.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 fourth.txt
+
+hp@DESKTOP-47BJPNN MINGW64 ~/learn_git (master)
+$ rm third.txt
+
+hp@DESKTOP-47BJPNN MINGW64 ~/learn_git (master)
+$ git add third.txt
+
+hp@DESKTOP-47BJPNN MINGW64 ~/learn_git (master)
+$ git commit -m "removing third.txt"
+[master 3d803ab] removing third.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ delete mode 100644 third.txt
+
+hp@DESKTOP-47BJPNN MINGW64 ~/learn_git (master)
+$ git log
+commit 3d803ab43ce5493cfa5d57a6a446e37cd0acc64e (HEAD -> master)
+Author: Aknioune <Fatimazaknioune@gmail.com>
+Date:   Tue Jan 10 15:50:14 2023 +0100
+
+    removing third.txt
+
+commit d20c768b666b51d0ffd08228541591dced5974e8
+Author: Aknioune <Fatimazaknioune@gmail.com>
+Date:   Tue Jan 10 15:39:22 2023 +0100
+
+    adding fourth.txt
+
+commit 12d0030e73da2f01f6fda38c7776865e934769f0
+Author: Aknioune <Fatimazaknioune@gmail.com>
+Date:   Tue Jan 10 15:34:41 2023 +0100
+
+    adding third.txt
+
+hp@DESKTOP-47BJPNN MINGW64 ~/learn_git (master)
+$ git config --global --list --show-origin
+file:C:/Users/hp/.gitconfig     user.name=Aknioune
+file:C:/Users/hp/.gitconfig     user.email=Fatimazaknioune@gmail.com
+
+hp@DESKTOP-47BJPNN MINGW64 ~/learn_git (master)
+$ git config --global core.pager "cat"
+
+hp@DESKTOP-47BJPNN MINGW64 ~/learn_git (master)
+$ git config --global --list --show-origin
+file:C:/Users/hp/.gitconfig     user.name=Aknioune
+file:C:/Users/hp/.gitconfig     user.email=Fatimazaknioune@gmail.com
+file:C:/Users/hp/.gitconfig     core.pager=cat
+
+hp@DESKTOP-47BJPNN MINGW64 ~/learn_git (master)
+$ git config --global
+usage: git config [<options>]
+
+Config file location
+    --global              use global config file
+    --system              use system config file
+    --local               use repository config file
+    --worktree            use per-worktree config file
+    -f, --file <file>     use given config file
+    --blob <blob-id>      read config from given blob object
+
+Action
+    --get                 get value: name [value-pattern]
+    --get-all             get all values: key [value-pattern]
+    --get-regexp          get values for regexp: name-regex [value-pattern]
+    --get-urlmatch        get value specific for the URL: section[.var] URL
+    --replace-all         replace all matching variables: name value [value-pattern]
+    --add                 add a new variable: name value
+    --unset               remove a variable: name [value-pattern]
+    --unset-all           remove all matches: name [value-pattern]
+    --rename-section      rename section: old-name new-name
+    --remove-section      remove a section: name
+    -l, --list            list all
+    --fixed-value         use string equality when comparing values to 'value-pattern'
+    -e, --edit            open an editor
+    --get-color           find the color configured: slot [default]
+    --get-colorbool       find the color setting: slot [stdout-is-tty]
+
+Type
+    -t, --type <type>     value is given this type
+    --bool                value is "true" or "false"
+    --int                 value is decimal number
+    --bool-or-int         value is --bool or --int
+    --bool-or-str         value is --bool or string
+    --path                value is a path (file or directory name)
+    --expiry-date         value is an expiry date
+
+Other
+    -z, --null            terminate values with NUL byte
+    --name-only           show variable names only
+    --includes            respect include directives on lookup
+    --show-origin         show origin of config (file, standard input, blob, command line)
+    --show-scope          show scope of config (worktree, local, global, system, command)
+    --default <value>     with --get, use default value when missing entry
+
+
+hp@DESKTOP-47BJPNN MINGW64 ~/learn_git (master)
+$
